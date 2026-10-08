@@ -13,7 +13,7 @@ class GameLevelWinter {
       pixels: { height: 360, width: 643 } //this is the old version im testing new sizes.
       
     };
-    const player_data = {
+    const red_player_data = {
         name: "Red Car",
         greeting: "I'm the red car!",
         src: "/images/projects/racing-game/Directions_red_car.png",
@@ -32,6 +32,15 @@ class GameLevelWinter {
         hitbox: { widthPercentage: 0.5, heightPercentage: 0.5 },
         keypress: { up: 87, left: 65, down: 83, right: 68 } // W, A, S, D
     }
+    const blue_player_data = {
+        ...red_player_data,
+        name: "Blue Car",
+        greeting: "I'm the blue car!",
+        src: "/images/projects/racing-game/Directions_blue_car.png",
+        INIT_POSITION: { x: 0, y: 0.1 }, // start below the red car so they don't overlap
+        touchOptions: { interactLabel: "e", position: "right" },
+        keypress: { up: 38, left: 37, down: 40, right: 39 } // Arrow keys
+    }
  
     const barrierData1 = {
       id: "barrier-2",
@@ -47,7 +56,8 @@ class GameLevelWinter {
 
     this.classes = [
       { class: GameEnvBackground, data: background_data },
-      { class: Player, data: player_data },
+      { class: Player, data: red_player_data },
+      { class: Player, data: blue_player_data },
       { class: SplineBarrier, data: barrierData1 },
       { class: SplineBarrier, data: barrierData2 }
     ];
