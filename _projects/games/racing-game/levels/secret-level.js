@@ -12,7 +12,7 @@ class GameLevelSecret {
       src: "/images/projects/racing-game/Secret_Track.png",
       pixels: { height: 360, width: 643 }
     };
-    const red_player_data = {
+    const player_data = {
         name: "Red Car",
         greeting: "I'm the red car!",
         src: "/images/projects/racing-game/Directions_red_car.png",
@@ -31,8 +31,8 @@ class GameLevelSecret {
         hitbox: { widthPercentage: 0.5, heightPercentage: 0.5 },
         keypress: { up: 87, left: 65, down: 83, right: 68 } // W, A, S, D
     }
-    const blue_player_data = {
-        ...red_player_data,
+    const player2_data = {
+        ...player_data,
         name: "Blue Car",
         greeting: "I'm the blue car!",
         src: "/images/projects/racing-game/Directions_blue_car.png",
@@ -62,8 +62,8 @@ class GameLevelSecret {
     };
     this.classes = [
         {class: GameEnvBackground, data: background_data},
-        {class: Player, data: red_player_data},
-        {class: Player, data: blue_player_data},
+        {class: Player, data: player_data},
+        {class: Player, data: player2_data},
         { class: SplineBarrier, data: barrierData1 },
         { class: SplineBarrier, data: barrierData2 },
         { class: SplineBarrier, data: barrierData3 },
